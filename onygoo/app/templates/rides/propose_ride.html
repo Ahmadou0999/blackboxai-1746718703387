@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Propose Ride - Onygoo</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h2>Propose a Ride</h2>
+    <form method="POST" action="{{ url_for('rides.propose_ride') }}">
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.origin.label }}<br>
+            {{ form.origin(size=40) }}<br>
+            {% for error in form.origin.errors %}
+                <span style="color: red;">{{ error }}</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.destination.label }}<br>
+            {{ form.destination(size=40) }}<br>
+            {% for error in form.destination.errors %}
+                <span style="color: red;">{{ error }}</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.departure_time.label }}<br>
+            {{ form.departure_time() }}<br>
+            <small>Format: YYYY-MM-DD HH:MM:SS</small><br>
+            {% for error in form.departure_time.errors %}
+                <span style="color: red;">{{ error }}</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.seats_available.label }}<br>
+            {{ form.seats_available() }}<br>
+            {% for error in form.seats_available.errors %}
+                <span style="color: red;">{{ error }}</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.price_per_seat.label }}<br>
+            {{ form.price_per_seat() }}<br>
+            {% for error in form.price_per_seat.errors %}
+                <span style="color: red;">{{ error }}</span>
+            {% endfor %}
+        </p>
+        <p>{{ form.submit() }}</p>
+    </form>
+</body>
+</html>
