@@ -1,0 +1,89 @@
+/* Basic styles for Onygoo user-facing pages */
+
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    background-color: #f8fafc;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+}
+
+h2 {
+    color: #1a202c;
+    margin-bottom: 20px;
+}
+
+form {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 500px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="datetime-local"],
+select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    border: 1px solid #cbd5e0;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+input[type="submit"],
+button {
+    background-color: #3182ce;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+input[type="submit"]:hover,
+button:hover {
+    background-color: #2b6cb0;
+}
+
+a {
+    color: #3182ce;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+span.error {
+    color: red;
+    font-size: 14px;
+}
+
+.flash-message {
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+}
+
+.flash-message.success {
+    background-color: #c6f6d5;
+    color: #22543d;
+}
+
+.flash-message.danger {
+    background-color: #fed7d7;
+    color: #742a2a;
+}
+
+.flash-message.warning {
+    background-color: #faf089;
+    color: #744210;
+}
