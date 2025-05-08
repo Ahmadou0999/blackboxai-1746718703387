@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>My Profile - Onygoo</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h2>My Profile</h2>
+    <form method="POST" action="{{ url_for('profiles.update_my_profile') }}">
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.full_name.label }}<br>
+            {{ form.full_name(size=40) }}<br>
+            {% for error in form.full_name.errors %}
+                <span style="color: red;">{{ error }}</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.phone_number.label }}<br>
+            {{ form.phone_number(size=20) }}<br>
+            {% for error in form.phone_number.errors %}
+                <span style="color: red;">{{ error }}</span>
+            {% endfor %}
+        </p>
+        <p>{{ form.submit() }}</p>
+    </form>
+    <p><a href="{{ url_for('profiles.upload_profile_photo') }}">Change Profile Photo</a></p>
+</body>
+</html>
