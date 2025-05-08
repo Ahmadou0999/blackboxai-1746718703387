@@ -1,0 +1,50 @@
+{% extends 'admin/base.html' %}
+
+{% block content %}
+<section class="content-header">
+  <div class="container-fluid">
+    <h1>Manage Rides</h1>
+  </div>
+</section>
+
+<section class="content">
+  <div class="container-fluid">
+    <table class="table table-bordered table-hover">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Driver ID</th>
+          <th>Origin</th>
+          <th>Destination</th>
+          <th>Departure Time</th>
+          <th>Seats Available</th>
+          <th>Status</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for ride in rides %}
+        <tr>
+          <td>{{ ride.id }}</td>
+          <td>{{ ride.driver_id }}</td>
+          <td>{{ ride.origin }}</td>
+          <td>{{ ride.destination }}</td>
+          <td>{{ ride.departure_time.strftime('%Y-%m-%d %H:%M:%S') }}</td>
+          <td>{{ ride.seats_available }}</td>
+          <td>{{ ride.status }}</td>
+          <td>
+            {% if ride.status != 'cancelled' %}
+            <form method="POST" action="{{ url_for('admin.cancel_ride', ride_id=ride.id) }}">
+              <button type="submit" class="btn btn-sm btn-danger">Cancel</button>
+            </form>
+            {% else %}
+            <span>Cancelled</span>
+            {% endif %}
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+{% endblock %}
