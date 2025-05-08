@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Upload Profile Photo - Onygoo</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h2>Upload Profile Photo</h2>
+    <form method="POST" action="{{ url_for('profiles.upload_profile_photo') }}" enctype="multipart/form-data">
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.photo.label }}<br>
+            {{ form.photo() }}<br>
+            {% for error in form.photo.errors %}
+                <span style="color: red;">{{ error }}</span>
+            {% endfor %}
+        </p>
+        <p>{{ form.submit() }}</p>
+    </form>
+    <p><a href="{{ url_for('profiles.update_my_profile') }}">Back to Profile</a></p>
+</body>
+</html>
