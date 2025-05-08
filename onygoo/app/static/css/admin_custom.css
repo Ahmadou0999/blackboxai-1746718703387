@@ -1,0 +1,49 @@
+/* Custom AdminLTE overrides for Onygoo */
+
+.main-sidebar {
+    background-color: #1e40af; /* Indigo-800 */
+}
+
+.brand-link {
+    font-weight: bold;
+    font-size: 1.25rem;
+    color: #f3f4f6; /* Gray-100 */
+}
+
+.nav-sidebar .nav-link.active {
+    background-color: #2563eb; /* Blue-600 */
+    color: white;
+}
+
+.nav-sidebar .nav-link:hover {
+    background-color: #3b82f6; /* Blue-500 */
+    color: white;
+}
+
+.content-wrapper {
+    background-color: #f9fafb; /* Gray-50 */
+}
+
+.table th, .table td {
+    vertical-align: middle;
+}
+
+.btn-primary {
+    background-color: #2563eb;
+    border-color: #2563eb;
+}
+
+.btn-primary:hover {
+    background-color: #1d4ed8;
+    border-color: #1d4ed8;
+}
+
+.btn-danger {
+    background-color: #dc2626;
+    border-color: #dc2626;
+}
+
+.btn-danger:hover {
+    background-color: #b91c1c;
+    border-color: #b91c1c;
+}
