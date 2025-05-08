@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Book a Seat - Onygoo</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h2>Book a Seat</h2>
+    <form method="POST" action="{{ url_for('reservations.book_seat') }}">
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.ride_id.label }}<br>
+            {{ form.ride_id() }}<br>
+            {% for error in form.ride_id.errors %}
+                <span style="color: red;">{{ error }}</span>
+            {% endfor %}
+        </p>
+        <p>{{ form.submit() }}</p>
+    </form>
+</body>
+</html>
